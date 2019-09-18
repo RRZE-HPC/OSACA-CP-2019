@@ -63,9 +63,6 @@ Latency Analysis Report
  527 |  6.0 | | fadd	d3, d1, d30
  528 |  6.0 | | fadd	d4, d3, d2
  529 |  6.0 | | fmul	d5, d4, d9
- 530 |  4.0 | | str	d5, [x14], 8
- 531 |  4.0 | | ldr	d6, [x14, x18, lsl 3]
- 535 |  6.0 | | fadd	d17, d6, d16
  536 |  6.0 | | fadd	d18, d17, d5
  537 |  6.0 | | fadd	d19, d18, d7
  538 |  6.0 | | fmul	d20, d19, d9
@@ -77,7 +74,7 @@ Latency Analysis Report
  554 |  6.0 | | fmul	d30, d0, d9
  555 |  4.0 | | str	d30, [x15, -8]
 
-       100.0
+       86.0
 
 
 Loop-Carried Dependencies Analysis Report
