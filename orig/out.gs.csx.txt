@@ -1,0 +1,13 @@
+# CASCADELAKE GAUSS-SEIDEL BENCHMARK.
+# FREQUENCY: 2.5 GHz
+ 
+ # Iterations:           20  Performance:    178.269392488094       MLUPs
+ # Iterations:           20  Performance:    178.308972387235       MLUPs
+ # Iterations:           20  Performance:    178.281720495085       MLUPs
+ # Iterations:           20  Performance:    178.211701973957       MLUPs
+ # Iterations:           20  Performance:    178.275266765534       MLUPs
+ # Iterations:           20  Performance:    178.215678705760       MLUPs
+ # Iterations:           20  Performance:    178.275182543768       MLUPs
+ # Iterations:           20  Performance:    178.235091491830       MLUPs
+ # Iterations:           20  Performance:    178.269792516209       MLUPs
+ # Iterations:           20  Performance:    178.276814354664       MLUPs

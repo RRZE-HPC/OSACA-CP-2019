@@ -1,0 +1,13 @@
+# NAPLES GAUSS-SEIDEL BENCHMARK
+# FREQUENCY 2.3 GHz
+
+ # Iterations:           20  Performance:    194.395487734107       MLUPs
+ # Iterations:           20  Performance:    194.385786996323       MLUPs
+ # Iterations:           20  Performance:    194.392608704443       MLUPs
+ # Iterations:           20  Performance:    194.402209974501       MLUPs
+ # Iterations:           20  Performance:    194.403161390585       MLUPs
+ # Iterations:           20  Performance:    194.391932770709       MLUPs
+ # Iterations:           20  Performance:    194.394961991891       MLUPs
+ # Iterations:           20  Performance:    194.396864691485       MLUPs
+ # Iterations:           20  Performance:    194.398279222557       MLUPs
+ # Iterations:           20  Performance:    194.402848423740       MLUPs

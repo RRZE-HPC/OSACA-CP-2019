@@ -68,8 +68,11 @@ Generate predictions (can be gained on any architecture) results with
 ```
 Generate performance (must be done on AMD Zen, Intel Cascade Lake SP and Cavium Vulcan machines) results with
 ```
-./run_measurements.sh
+./run_measurements.sh [ARCH]
 ```
+
+The parameter `ARCH` can be either `CSX`, `ZEN1` or `TX2`.
+
 ## A.5 Evaluation and expected result
 Fixing the frequency and disabling turbo is very important to verify our results.
 
@@ -87,7 +90,7 @@ E.g., 2.2 GHz / 118.9 MLUP/s = 18.50 cy/it.
 
 We expect these numbers to lie within 10% of those in the paper, if run on the same micro architectures as mentioned. If your numbers are significantly faster, turbo mode or frequency scaling might be the reson. If they are slower, while running on a laptop or desktop machine, energy saving features may have interfered.
 
-The measured results will be stored as `gs.out.[architecture].txt`.
+The measured results will be stored as `out.gs.[architecture].txt`.
 
 Compare numbers to Table **TODO**.
 

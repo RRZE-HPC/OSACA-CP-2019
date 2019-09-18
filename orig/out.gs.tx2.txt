@@ -1,0 +1,13 @@
+# THUNDER X2 GAUSS-SEIDEL BENCHMARK
+# FREQUENCY: 2.2 GHz (not configurable)
+
+ # Iterations:            20  Performance:     118.8628592575393       MLUPs
+ # Iterations:            20  Performance:     118.8755808258182       MLUPs
+ # Iterations:            20  Performance:     118.9050221784516       MLUPs
+ # Iterations:            20  Performance:     118.8585023485955       MLUPs
+ # Iterations:            20  Performance:     118.8831972839194       MLUPs
+ # Iterations:            20  Performance:     118.8578565611318       MLUPs
+ # Iterations:            20  Performance:     118.8899110623734       MLUPs
+ # Iterations:            20  Performance:     118.8737739912815       MLUPs
+ # Iterations:            20  Performance:     118.9171203952963       MLUPs
+ # Iterations:            20  Performance:     118.8657656010318       MLUPs

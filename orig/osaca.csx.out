@@ -1,0 +1,74 @@
+Open Source Architecture Code Analyzer (OSACA) - v0.3.0
+Analyzed file:      gs.kernel.csx.Ofast.s
+Architecture:       csx
+Timestamp:          2019-09-17 21:27:33
+
+ P - Throughput of LOAD operation can be hidden behind a past or future STORE instruction
+ * - Instruction micro-ops not bound to a port
+ X - No throughput/latency information for this instruction in data file
+
+
+Throughput Analysis Report
+--------------------------
+                             Port pressure in cycles                              
+     |  0   - 0DV  |  1   |  2   -  2D  |  3   -  3D  |  4   |  5   |  6   |  7   |
+----------------------------------------------------------------------------------
+   9 |             |      |             |             |      |      |      |      |   ..B1.75:                        # Preds ..B1.75 ..B1.74
+  10 |             |      |             |             |      |      |      |      |   # Execution count [9.36e+01]
+  11 |             |      | 0.50   0.50 | 0.50   0.50 |      |      |      |      |   vmovsd    8(%r12,%r11), %xmm2                           #55.35
+  12 | 0.25        | 0.25 |             |             |      | 0.25 | 0.25 |      |   incq      %r15                                          #54.9
+  13 | 0.50        | 0.50 | 0.50   0.50 | 0.50   0.50 |      |      |      |      |   vaddsd    16(%r12,%r13), %xmm2, %xmm3                   #55.12
+  14 | 0.50        | 0.50 | 0.50   0.50 | 0.50   0.50 |      |      |      |      |   vaddsd    8(%r12,%r10), %xmm3, %xmm4                    #55.12
+  15 | 0.50        | 0.50 |             |             |      |      |      |      |   vaddsd    %xmm1, %xmm4, %xmm1                           #55.12
+  16 | 0.50        | 0.50 |             |             |      |      |      |      |   vmulsd    %xmm1, %xmm0, %xmm5                           #55.12
+  17 |             |      | 0.50        | 0.50        | 1.00 |      |      |      |   vmovsd    %xmm5, 8(%r12,%r13)                           #55.12
+  18 | 0.50        | 0.50 | 0.50   0.50 | 0.50   0.50 |      |      |      |      |   vaddsd    16(%r12,%r11), %xmm5, %xmm6                   #55.48
+  19 | 0.50        | 0.50 | 0.50   0.50 | 0.50   0.50 |      |      |      |      |   vaddsd    24(%r12,%r13), %xmm6, %xmm7                   #55.63
+  20 | 0.50        | 0.50 | 0.50   0.50 | 0.50   0.50 |      |      |      |      |   vaddsd    16(%r12,%r10), %xmm7, %xmm8                   #55.79
+  21 | 0.50        | 0.50 |             |             |      |      |      |      |   vmulsd    %xmm8, %xmm0, %xmm9                           #55.12
+  22 |             |      | 0.50        | 0.50        | 1.00 |      |      |      |   vmovsd    %xmm9, 16(%r12,%r13)                          #55.12
+  23 | 0.50        | 0.50 | 0.50   0.50 | 0.50   0.50 |      |      |      |      |   vaddsd    24(%r12,%r11), %xmm9, %xmm10                  #55.48
+  24 | 0.50        | 0.50 | 0.50   0.50 | 0.50   0.50 |      |      |      |      |   vaddsd    32(%r12,%r13), %xmm10, %xmm11                 #55.63
+  25 | 0.50        | 0.50 | 0.50   0.50 | 0.50   0.50 |      |      |      |      |   vaddsd    24(%r12,%r10), %xmm11, %xmm12                 #55.79
+  26 | 0.50        | 0.50 |             |             |      |      |      |      |   vmulsd    %xmm12, %xmm0, %xmm13                         #55.12
+  27 |             |      | 0.50        | 0.50        | 1.00 |      |      |      |   vmovsd    %xmm13, 24(%r12,%r13)                         #55.12
+  28 | 0.50        | 0.50 | 0.50   0.50 | 0.50   0.50 |      |      |      |      |   vaddsd    32(%r12,%r11), %xmm13, %xmm14                 #55.48
+  29 | 0.50        | 0.50 | 0.50   0.50 | 0.50   0.50 |      |      |      |      |   vaddsd    40(%r12,%r13), %xmm14, %xmm15                 #55.63
+  30 | 0.50        | 0.50 | 0.50   0.50 | 0.50   0.50 |      |      |      |      |   vaddsd    32(%r12,%r10), %xmm15, %xmm16                 #55.79
+  31 | 0.50        | 0.50 |             |             |      |      |      |      |   vmulsd    %xmm16, %xmm0, %xmm1                          #55.12
+  32 |             |      | 0.50        | 0.50        | 1.00 |      |      |      |   vmovsd    %xmm1, 32(%r12,%r13)                          #55.12
+  33 | 0.25        | 0.25 |             |             |      | 0.25 | 0.25 |      |   addq      $32, %r12                                     #54.9
+  34 | 0.25        | 0.25 |             |             |      | 0.25 | 0.25 |      |   cmpq      %rbx, %r15                                    #54.9
+  35 |             |      |             |             |      |      |      |      | * jb        ..B1.75       # Prob 28%                      #54.9
+
+       8.75          8.75   8.00   6.00   8.00   6.00   4.00   0.75   0.75         
+
+
+Latency Analysis Report
+-----------------------
+  11 |  4.0 | | vmovsd    8(%r12,%r11), %xmm2                           #55.35
+  13 |  8.0 | | vaddsd    16(%r12,%r13), %xmm2, %xmm3                   #55.12
+  14 |  8.0 | | vaddsd    8(%r12,%r10), %xmm3, %xmm4                    #55.12
+  15 |  4.0 | | vaddsd    %xmm1, %xmm4, %xmm1                           #55.12
+  16 |  4.0 | | vmulsd    %xmm1, %xmm0, %xmm5                           #55.12
+  18 |  8.0 | | vaddsd    16(%r12,%r11), %xmm5, %xmm6                   #55.48
+  19 |  8.0 | | vaddsd    24(%r12,%r13), %xmm6, %xmm7                   #55.63
+  20 |  8.0 | | vaddsd    16(%r12,%r10), %xmm7, %xmm8                   #55.79
+  21 |  4.0 | | vmulsd    %xmm8, %xmm0, %xmm9                           #55.12
+  23 |  8.0 | | vaddsd    24(%r12,%r11), %xmm9, %xmm10                  #55.48
+  24 |  8.0 | | vaddsd    32(%r12,%r13), %xmm10, %xmm11                 #55.63
+  25 |  8.0 | | vaddsd    24(%r12,%r10), %xmm11, %xmm12                 #55.79
+  26 |  4.0 | | vmulsd    %xmm12, %xmm0, %xmm13                         #55.12
+  28 |  8.0 | | vaddsd    32(%r12,%r11), %xmm13, %xmm14                 #55.48
+  29 |  8.0 | | vaddsd    40(%r12,%r13), %xmm14, %xmm15                 #55.63
+  30 |  8.0 | | vaddsd    32(%r12,%r10), %xmm15, %xmm16                 #55.79
+  31 |  4.0 | | vmulsd    %xmm16, %xmm0, %xmm1                          #55.12
+  32 |  4.0 | | vmovsd    %xmm1, 32(%r12,%r13)                          #55.12
+
+       116.0
+
+
+Loop-Carried Dependencies Analysis Report
+-----------------------------------------
+  31 | 92.0 | vmulsd    %xmm16, %xmm0, %xmm1                          #55.12| [15, 16, 18, 19, 20, 21, 23, 24, 25, 26, 28, 29, 30, 31]
+  33 |  1.0 | addq      $32, %r12                                     #54.9| [33]
