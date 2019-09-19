@@ -82,7 +82,7 @@ We expect these numbers to exactly match those in the paper. If your numbers dev
 
 The OSACA output of your benchmarks can be found in the `measurements` directory in the structure `osaca.[architecture].out`.
 
-Compare numbers to Table **TODO**.
+Compare numbers to Table I.
 
 ### `./run_measurements.sh`
 It outputs performance measurements in Time [s] and MLUP/s. MLUP/s can be easily translated to cy/it, as used in the paper: Frequency / MLUP/s.
@@ -92,7 +92,7 @@ We expect these numbers to lie within 10% of those in the paper, if run on the s
 
 The measured results will be stored as `out.gs.[architecture].txt`.
 
-Compare numbers to Table **TODO**.
+Compare numbers to Table I.
 
 ## A.6 Experiment customization
 None
