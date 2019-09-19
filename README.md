@@ -62,27 +62,24 @@ Fix frequencies and disable turbo mode on CPU (for 2.3 GHz, or which ever freque
 ```
 likwid-setFrequencies -t 0 -f 2.3
 ```
-Generate predictions (can be gained on any architecture) results with
-```
-./run_predictions.sh
-```
 Generate performance (must be done on AMD Zen, Intel Cascade Lake SP and Cavium Vulcan machines) results with
 ```
 ./run_measurements.sh [ARCH]
 ```
-
 The parameter `ARCH` can be either `CSX`, `ZEN1` or `TX2`.
+
+Generate predictions (can be gained on any architecture) results with
+```
+./run_predictions.sh
+```
+Make sure to have the assembly output created (e.g., by running `run_measurements` first) and the kernel marked.
+For adding IACA/OSACA x86 byte markers, one may use:
+```
+osaca --insert-marker --arch [ARCH] gs.s.{ARCH].Ofast.s
+```
 
 ## A.5 Evaluation and expected result
 Fixing the frequency and disabling turbo is very important to verify our results.
-
-### `./run_predictions.sh`
-
-We expect these numbers to exactly match those in the paper. If your numbers deviate you will mostlikly have used a different compiler. Please compare the generated assembly of your compiler (found in `gauss-seidel/*.s`) with those we have generated for the paper (found in `orig/*.s`).
-
-The OSACA output of your benchmarks can be found in the `measurements` directory in the structure `osaca.[architecture].out`.
-
-Compare numbers to Table I.
 
 ### `./run_measurements.sh`
 It outputs performance measurements in Time [s] and MLUP/s. MLUP/s can be easily translated to cy/it, as used in the paper: Frequency / MLUP/s.
@@ -91,6 +88,14 @@ E.g., 2.2 GHz / 118.9 MLUP/s = 18.50 cy/it.
 We expect these numbers to lie within 10% of those in the paper, if run on the same micro architectures as mentioned. If your numbers are significantly faster, turbo mode or frequency scaling might be the reson. If they are slower, while running on a laptop or desktop machine, energy saving features may have interfered.
 
 The measured results will be stored as `out.gs.[architecture].txt`.
+
+Compare numbers to Table I.
+
+### `./run_predictions.sh`
+
+We expect these numbers to exactly match those in the paper. If your numbers deviate you will mostlikly have used a different compiler. Please compare the generated assembly of your compiler (found in `gauss-seidel/*.s`) with those we have generated for the paper (found in `orig/*.s`).
+
+The OSACA output of your benchmarks can be found in the `measurements` directory in the structure `osaca.[architecture].out`.
 
 Compare numbers to Table I.
 
