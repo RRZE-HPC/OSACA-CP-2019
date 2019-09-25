@@ -1,7 +1,7 @@
 Open Source Architecture Code Analyzer (OSACA) - v0.3.0
 Analyzed file:      gs.s.arm.Ofast.s
 Architecture:       vulcan
-Timestamp:          2019-09-17 20:21:30
+Timestamp:          2019-09-25 10:23:49
 
  P - Throughput of LOAD operation can be hidden behind a past or future STORE instruction
  * - Instruction micro-ops not bound to a port

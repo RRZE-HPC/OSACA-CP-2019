@@ -735,8 +735,8 @@ MAIN_:                                  // @MAIN_
 	ldr	d0, [x9, x7]
 	mov	x7, x25
 	.p2align	6
-    	mov x1, #111		// OSACA START MARKER
-    	.byte 213,3,32,31	// OSACA START MARKER
+    mov x1, #111		// OSACA START MARKER
+   	.byte 213,3,32,31	// OSACA START MARKER
 .LBB0_62:                               // %L.LB1_398.1
                                         //   Parent Loop BB0_50 Depth=1
                                         //     Parent Loop BB0_55 Depth=2
@@ -754,8 +754,8 @@ MAIN_:                                  // @MAIN_
 	add	x22, x22, #8            // =8
 	cmp	w26, #2                 // =2
 	b.gt	.LBB0_62
-    	mov x1, #222		// OSACA END MARKER
-    	.byte 213,3,32,31	// OSACA END MARKER
+   	mov x1, #222		// OSACA END MARKER
+   	.byte 213,3,32,31	// OSACA END MARKER
 // %bb.63:                              // %L.LB1_399.1
                                         //   in Loop: Header=BB0_59 Depth=3
 	orr	x7, x11, #0x2

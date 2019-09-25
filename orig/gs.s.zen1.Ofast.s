@@ -802,6 +802,11 @@ MAIN__:
         movq      80(%rsp), %rbx                                #55.66[spill]
         lea       (%r8,%rax), %r10                              #55.66
                                 # LOE rax rdx rcx rbx rsi rdi r8 r9 r10 r11 r12 r13 r15 r14d xmm0 xmm1
+        movl      $111, %ebx # INSERTED BY KERNCRAFT IACA MARKER UTILITY
+        .byte     100        # INSERTED BY KERNCRAFT IACA MARKER UTILITY
+        .byte     103        # INSERTED BY KERNCRAFT IACA MARKER UTILITY
+        .byte     144        # INSERTED BY KERNCRAFT IACA MARKER UTILITY
+        # LLVM-MCA-BEGIN
 ..B1.75:                        # Preds ..B1.75 ..B1.74
                                 # Execution count [9.36e+01]
         vmovsd    8(%r12,%r11), %xmm2                           #55.35
@@ -829,6 +834,11 @@ MAIN__:
         addq      $32, %r12                                     #54.9
         cmpq      %rbx, %r15                                    #54.9
         jb        ..B1.75       # Prob 28%                      #54.9
+        # LLVM-MCA-END
+        movl      $111, %ebx # INSERTED BY KERNCRAFT IACA MARKER UTILITY
+        .byte     100        # INSERTED BY KERNCRAFT IACA MARKER UTILITY
+        .byte     103        # INSERTED BY KERNCRAFT IACA MARKER UTILITY
+        .byte     144        # INSERTED BY KERNCRAFT IACA MARKER UTILITY
                                 # LOE rax rdx rcx rbx rsi rdi r8 r9 r10 r11 r12 r13 r15 r14d xmm0 xmm1
 ..B1.76:                        # Preds ..B1.75
                                 # Execution count [6.74e+01]
