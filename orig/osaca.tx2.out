@@ -1,7 +1,7 @@
 Open Source Architecture Code Analyzer (OSACA) - v0.3.0
 Analyzed file:      gs.s.arm.Ofast.s
 Architecture:       vulcan
-Timestamp:          2019-09-25 10:23:49
+Timestamp:          2019-09-25 10:26:07
 
  P - Throughput of LOAD operation can be hidden behind a past or future STORE instruction
  * - Instruction micro-ops not bound to a port
@@ -63,6 +63,9 @@ Latency Analysis Report
  527 |  6.0 | | fadd	d3, d1, d30
  528 |  6.0 | | fadd	d4, d3, d2
  529 |  6.0 | | fmul	d5, d4, d9
+ 530 |  4.0 | | str	d5, [x14], 8
+ 531 |  4.0 | | ldr	d6, [x14, x18, lsl 3]
+ 535 |  6.0 | | fadd	d17, d6, d16
  536 |  6.0 | | fadd	d18, d17, d5
  537 |  6.0 | | fadd	d19, d18, d7
  538 |  6.0 | | fmul	d20, d19, d9
@@ -74,7 +77,7 @@ Latency Analysis Report
  554 |  6.0 | | fmul	d30, d0, d9
  555 |  4.0 | | str	d30, [x15, -8]
 
-       86.0
+      100.0
 
 
 Loop-Carried Dependencies Analysis Report
