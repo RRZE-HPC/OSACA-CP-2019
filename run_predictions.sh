@@ -11,11 +11,11 @@ osaca --arch csx gs.s.CSX.Ofast.s | tee osaca.CSX.out
 osaca --arch zen1 gs.s.ZEN1.Ofast.s | tee osaca.ZEN1.out
 
 #echo "Running IACA analysis ..."
-#iaca3.0 -arch SKX gs.s.CSX.Ofast.s | tee iaca.SKX.out
+#iaca3.0 -arch SKX gs.s.CSX.Ofast.s | tee iaca.CSX.out
 
 #echo "Running LLVM-MCA analysis ..."
-#llvm-mca-7 -mcpu=skx -timeline gs.s.ZEN1.Ofast.s | tee mca.SKX.out
-#llvm-mca-7 -mcpu=znver1 -timeline gs.s.CSX.Ofast.s | tee mca.ZEN1.out
+#llvm-mca-7 -mcpu=skx -timeline -timeline-max-cycles=200 gs.s.CSX.Ofast.s | tee mca.CSX.out
+#llvm-mca-7 -mcpu=znver1 -timeline -timeline-max-cycles=250 gs.s.ZEN1.Ofast.s | tee mca.ZEN1.out
 
 # Epiloge
 echo "Please compare your GAUSS-SEIDEL results in ./gauss-seidel/*.out"
