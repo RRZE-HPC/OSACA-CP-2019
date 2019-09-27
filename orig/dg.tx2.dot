@@ -1,0 +1,489 @@
+digraph  {
+	node [colorscheme=accent8];
+	edge [colorscheme=accent8];
+	"520: label"	 [fontname=italic,
+		fontsize=11.0,
+		instruction_form="{'instruction': None, 'operands': None, 'directive': None, 'comment': None, 'label': '.L20', 'line': '.L20:', 'line_number': 520\
+, 'port_pressure': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'flags': [], 'throughput': 0.0, 'latency': 0.0, 'latency_wo_load': \
+0.0, 'latency_cp': 0, 'latency_lcd': 0}",
+		shape=rectangle];
+	"521: ldr"	 [instruction_form="{'instruction': 'ldr', 'operands': {'source': [{'memory': {'offset': None, 'base': {'prefix': 'x', 'name': '15'}, 'index': {'prefix\
+': 'x', 'name': '18', 'shift_op': 'lsl', 'shift': {'value': '3'}}, 'scale': 8}}], 'destination': [{'register': {'prefix': 'd', '\
+name': '31'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': 'd', 'name': '31'}}, {'memory': {'offset': None, 'base':\
+ {'prefix': 'x', 'name': '15'}, 'index': {'prefix': 'x', 'name': '18', 'shift_op': 'lsl', 'shift': {'value': '3'}}, 'scale': 8}}\
+]}, 'directive': None, 'comment': None, 'label': None, 'line': 'ldr\td31, [x15, x18, lsl 3]', 'line_number': 521, 'flags': ['performs\
+_load', 'is_load_instruction'], 'port_pressure': [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.0], 'throughput': 0.5, 'latency': 4.0, 'latency\
+_wo_load': 4.0, 'latency_cp': 4.0, 'latency_lcd': 0}",
+		penwidth=4,
+		shape=rectangle,
+		style=bold];
+	"527: fadd"	 [instruction_form="{'instruction': 'fadd', 'operands': {'source': [{'register': {'prefix': 'd', 'name': '31'}}, {'register': {'prefix': 'd', 'name'\
+: '0'}}], 'destination': [{'register': {'prefix': 'd', 'name': '1'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': '\
+d', 'name': '1'}}, {'register': {'prefix': 'd', 'name': '31'}}, {'register': {'prefix': 'd', 'name': '0'}}]}, 'directive': None,\
+ 'comment': None, 'label': None, 'line': 'fadd\td1, d31, d0', 'line_number': 527, 'flags': [], 'port_pressure': [0.5, 0.0, 0.5, \
+0.0, 0.0, 0.0, 0.0, 0.0], 'throughput': 0.5, 'latency': 6.0, 'latency_wo_load': 6.0, 'latency_cp': 6.0, 'latency_lcd': 0}",
+		penwidth=4,
+		shape=rectangle,
+		style=bold];
+	"521: ldr" -> "527: fadd"	 [label=4.0,
+		latency=4.0,
+		penwidth=3,
+		style=bold];
+	"522: ldr"	 [instruction_form="{'instruction': 'ldr', 'operands': {'source': [{'memory': {'offset': {'value': '8'}, 'base': {'prefix': 'x', 'name': '15'}, 'index\
+': None, 'scale': 1}}], 'destination': [{'register': {'prefix': 'd', 'name': '0'}}], 'src_dst': [], 'operand_list': [{'register'\
+: {'prefix': 'd', 'name': '0'}}, {'memory': {'offset': {'value': '8'}, 'base': {'prefix': 'x', 'name': '15'}, 'index': None, 'scale\
+': 1}}]}, 'directive': None, 'comment': None, 'label': None, 'line': 'ldr\td0, [x15, 8]', 'line_number': 522, 'flags': ['performs\
+_load', 'is_load_instruction'], 'port_pressure': [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.0], 'throughput': 0.5, 'latency': 4.0, 'latency\
+_wo_load': 4.0, 'latency_cp': 0, 'latency_lcd': 0}",
+		shape=rectangle];
+	"522: ldr" -> "527: fadd"	 [label=4.0,
+		latency=4.0];
+	"523: mov"	 [instruction_form="{'instruction': 'mov', 'operands': {'source': [{'register': {'prefix': 'x', 'name': '15'}}], 'destination': [{'register': {'prefix\
+': 'x', 'name': '14'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': 'x', 'name': '14'}}, {'register': {'prefix': 'x\
+', 'name': '15'}}]}, 'directive': None, 'comment': None, 'label': None, 'line': 'mov\tx14, x15', 'line_number': 523, 'flags': []\
+, 'port_pressure': [0.5, 0.0, 0.5, 0.0, 0.0, 0.0, 0.0, 0.0], 'throughput': 0.5, 'latency': 1.0, 'latency_wo_load': 1.0, 'latency\
+_cp': 0, 'latency_lcd': 0}",
+		shape=rectangle];
+	"531: str"	 [instruction_form="{'instruction': 'str', 'operands': {'source': [{'register': {'prefix': 'd', 'name': '5'}}], 'destination': [{'memory': {'offset'\
+: None, 'base': {'prefix': 'x', 'name': '14'}, 'index': None, 'scale': 1, 'post_indexed': {'value': '8'}}}], 'src_dst': [], 'operand\
+_list': [{'register': {'prefix': 'd', 'name': '5'}}, {'memory': {'offset': None, 'base': {'prefix': 'x', 'name': '14'}, 'index':\
+ None, 'scale': 1, 'post_indexed': {'value': '8'}}}]}, 'directive': None, 'comment': None, 'label': None, 'line': 'str\td5, [x14\
+], 8', 'line_number': 531, 'flags': ['performs_store'], 'port_pressure': [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 1.0], 'throughput':\
+ 1.0, 'latency': 4.0, 'latency_wo_load': 4.0, 'latency_cp': 4.0, 'latency_lcd': 4.0}",
+		penwidth=4,
+		shape=rectangle,
+		style=bold];
+	"523: mov" -> "531: str"	 [label=1.0,
+		latency=1.0];
+	"524: add"	 [instruction_form="{'instruction': 'add', 'operands': {'source': [{'register': {'prefix': 'x', 'name': '15'}}, {'immediate': {'value': '24'}}], 'destination\
+': [{'register': {'prefix': 'x', 'name': '16'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': 'x', 'name': '16'}}, {\
+'register': {'prefix': 'x', 'name': '15'}}, {'immediate': {'value': '24'}}]}, 'directive': None, 'comment': None, 'label': None,\
+ 'line': 'add\tx16, x15, 24', 'line_number': 524, 'flags': [], 'port_pressure': [0.33333333, 0.0, 0.33333333, 0.0, 0.33333333, 0.0\
+, 0.0, 0.0], 'throughput': 0.33333333, 'latency': 1.0, 'latency_wo_load': 1.0, 'latency_cp': 0, 'latency_lcd': 0}",
+		shape=rectangle];
+	"550: ldr"	 [instruction_form="{'instruction': 'ldr', 'operands': {'source': [{'memory': {'offset': None, 'base': {'prefix': 'x', 'name': '16'}, 'index': {'prefix\
+': 'x', 'name': '18', 'shift_op': 'lsl', 'shift': {'value': '3'}}, 'scale': 8}}], 'destination': [{'register': {'prefix': 'd', '\
+name': '28'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': 'd', 'name': '28'}}, {'memory': {'offset': None, 'base':\
+ {'prefix': 'x', 'name': '16'}, 'index': {'prefix': 'x', 'name': '18', 'shift_op': 'lsl', 'shift': {'value': '3'}}, 'scale': 8}}\
+]}, 'directive': None, 'comment': None, 'label': None, 'line': 'ldr\td28, [x16, x18, lsl 3]', 'line_number': 550, 'flags': ['performs\
+_load', 'is_load_instruction'], 'port_pressure': [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.0], 'throughput': 0.5, 'latency': 4.0, 'latency\
+_wo_load': 4.0, 'latency_cp': 0, 'latency_lcd': 0}",
+		shape=rectangle];
+	"524: add" -> "550: ldr"	 [label=1.0,
+		latency=1.0];
+	"551: ldr"	 [instruction_form="{'instruction': 'ldr', 'operands': {'source': [{'memory': {'offset': None, 'base': {'prefix': 'x', 'name': '16'}, 'index': {'prefix\
+': 'x', 'name': '30', 'shift_op': 'lsl', 'shift': {'value': '3'}}, 'scale': 8}}], 'destination': [{'register': {'prefix': 'd', '\
+name': '29'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': 'd', 'name': '29'}}, {'memory': {'offset': None, 'base':\
+ {'prefix': 'x', 'name': '16'}, 'index': {'prefix': 'x', 'name': '30', 'shift_op': 'lsl', 'shift': {'value': '3'}}, 'scale': 8}}\
+]}, 'directive': None, 'comment': None, 'label': None, 'line': 'ldr\td29, [x16, x30, lsl 3]', 'line_number': 551, 'flags': ['performs\
+_load', 'is_load_instruction'], 'port_pressure': [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.0], 'throughput': 0.5, 'latency': 4.0, 'latency\
+_wo_load': 4.0, 'latency_cp': 0, 'latency_lcd': 0}",
+		shape=rectangle];
+	"524: add" -> "551: ldr"	 [label=1.0,
+		latency=1.0];
+	"525: ldr"	 [instruction_form="{'instruction': 'ldr', 'operands': {'source': [{'memory': {'offset': None, 'base': {'prefix': 'x', 'name': '15'}, 'index': {'prefix\
+': 'x', 'name': '30', 'shift_op': 'lsl', 'shift': {'value': '3'}}, 'scale': 8}}], 'destination': [{'register': {'prefix': 'd', '\
+name': '2'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': 'd', 'name': '2'}}, {'memory': {'offset': None, 'base': {\
+'prefix': 'x', 'name': '15'}, 'index': {'prefix': 'x', 'name': '30', 'shift_op': 'lsl', 'shift': {'value': '3'}}, 'scale': 8}}]}\
+, 'directive': None, 'comment': None, 'label': None, 'line': 'ldr\td2, [x15, x30, lsl 3]', 'line_number': 525, 'flags': ['performs\
+_load', 'is_load_instruction'], 'port_pressure': [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.0], 'throughput': 0.5, 'latency': 4.0, 'latency\
+_wo_load': 4.0, 'latency_cp': 0, 'latency_lcd': 0}",
+		shape=rectangle];
+	"529: fadd"	 [fillcolor=3,
+		instruction_form="{'instruction': 'fadd', 'operands': {'source': [{'register': {'prefix': 'd', 'name': '3'}}, {'register': {'prefix': 'd', 'name':\
+ '2'}}], 'destination': [{'register': {'prefix': 'd', 'name': '4'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': 'd\
+', 'name': '4'}}, {'register': {'prefix': 'd', 'name': '3'}}, {'register': {'prefix': 'd', 'name': '2'}}]}, 'directive': None, '\
+comment': None, 'label': None, 'line': 'fadd\td4, d3, d2', 'line_number': 529, 'flags': [], 'port_pressure': [0.5, 0.0, 0.5, 0.0\
+, 0.0, 0.0, 0.0, 0.0], 'throughput': 0.5, 'latency': 6.0, 'latency_wo_load': 6.0, 'latency_cp': 6.0, 'latency_lcd': 6.0}",
+		penwidth=4,
+		shape=rectangle,
+		style="bold,filled"];
+	"525: ldr" -> "529: fadd"	 [label=4.0,
+		latency=4.0];
+	"526: add"	 [fillcolor=2,
+		instruction_form="{'instruction': 'add', 'operands': {'source': [{'register': {'prefix': 'x', 'name': '15'}}, {'immediate': {'value': '32'}}], 'destination\
+': [{'register': {'prefix': 'x', 'name': '15'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': 'x', 'name': '15'}}, {\
+'register': {'prefix': 'x', 'name': '15'}}, {'immediate': {'value': '32'}}]}, 'directive': None, 'comment': None, 'label': None,\
+ 'line': 'add\tx15, x15, 32', 'line_number': 526, 'flags': [], 'port_pressure': [0.33333333, 0.0, 0.33333333, 0.0, 0.33333333, 0.0\
+, 0.0, 0.0], 'throughput': 0.33333333, 'latency': 1.0, 'latency_wo_load': 1.0, 'latency_cp': 0, 'latency_lcd': 1.0}",
+		shape=rectangle,
+		style=filled];
+	"526: add" -> "526: add"	 [color=2,
+		label=1.0,
+		latency=1.0];
+	"540: str"	 [instruction_form="{'instruction': 'str', 'operands': {'source': [{'register': {'prefix': 'd', 'name': '20'}}], 'destination': [{'memory': {'offset\
+': {'value': '-24'}, 'base': {'prefix': 'x', 'name': '15'}, 'index': None, 'scale': 1}}], 'src_dst': [], 'operand_list': [{'register\
+': {'prefix': 'd', 'name': '20'}}, {'memory': {'offset': {'value': '-24'}, 'base': {'prefix': 'x', 'name': '15'}, 'index': None,\
+ 'scale': 1}}]}, 'directive': None, 'comment': None, 'label': None, 'line': 'str\td20, [x15, -24]', 'line_number': 540, 'flags':\
+ ['performs_store'], 'port_pressure': [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 1.0], 'throughput': 1.0, 'latency': 4.0, 'latency_wo_load\
+': 4.0, 'latency_cp': 0, 'latency_lcd': 0}",
+		shape=rectangle];
+	"526: add" -> "540: str"	 [label=1.0,
+		latency=1.0];
+	"549: ldr"	 [instruction_form="{'instruction': 'ldr', 'operands': {'source': [{'memory': {'offset': None, 'base': {'prefix': 'x', 'name': '15'}, 'index': None,\
+ 'scale': 1}}], 'destination': [{'register': {'prefix': 'd', 'name': '30'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix\
+': 'd', 'name': '30'}}, {'memory': {'offset': None, 'base': {'prefix': 'x', 'name': '15'}, 'index': None, 'scale': 1}}]}, 'directive\
+': None, 'comment': None, 'label': None, 'line': 'ldr\td30, [x15]', 'line_number': 549, 'flags': ['performs_load', 'is_load_instruction\
+'], 'port_pressure': [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.0], 'throughput': 0.5, 'latency': 4.0, 'latency_wo_load': 4.0, 'latency\
+_cp': 0, 'latency_lcd': 0}",
+		shape=rectangle];
+	"526: add" -> "549: ldr"	 [label=1.0,
+		latency=1.0];
+	"556: str"	 [instruction_form="{'instruction': 'str', 'operands': {'source': [{'register': {'prefix': 'd', 'name': '30'}}], 'destination': [{'memory': {'offset\
+': {'value': '-8'}, 'base': {'prefix': 'x', 'name': '15'}, 'index': None, 'scale': 1}}], 'src_dst': [], 'operand_list': [{'register\
+': {'prefix': 'd', 'name': '30'}}, {'memory': {'offset': {'value': '-8'}, 'base': {'prefix': 'x', 'name': '15'}, 'index': None, \
+'scale': 1}}]}, 'directive': None, 'comment': None, 'label': None, 'line': 'str\td30, [x15, -8]', 'line_number': 556, 'flags': [\
+'performs_store'], 'port_pressure': [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 1.0], 'throughput': 1.0, 'latency': 4.0, 'latency_wo_load\
+': 4.0, 'latency_cp': 4.0, 'latency_lcd': 0}",
+		penwidth=4,
+		shape=rectangle,
+		style=bold];
+	"526: add" -> "556: str"	 [label=1.0,
+		latency=1.0];
+	"557: cmp"	 [instruction_form="{'instruction': 'cmp', 'operands': {'source': [{'register': {'prefix': 'x', 'name': '15'}}], 'destination': [{'register': {'prefix\
+': 'x', 'name': '7'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': 'x', 'name': '7'}}, {'register': {'prefix': 'x',\
+ 'name': '15'}}]}, 'directive': None, 'comment': None, 'label': None, 'line': 'cmp\tx7, x15', 'line_number': 557, 'flags': [], '\
+port_pressure': [0.33333333, 0.0, 0.33333333, 0.0, 0.33333333, 0.0, 0.0, 0.0], 'throughput': 0.33333333, 'latency': 1.0, 'latency\
+_wo_load': 1.0, 'latency_cp': 0, 'latency_lcd': 0}",
+		shape=rectangle];
+	"526: add" -> "557: cmp"	 [label=1.0,
+		latency=1.0];
+	"528: fadd"	 [fillcolor=3,
+		instruction_form="{'instruction': 'fadd', 'operands': {'source': [{'register': {'prefix': 'd', 'name': '1'}}, {'register': {'prefix': 'd', 'name':\
+ '30'}}], 'destination': [{'register': {'prefix': 'd', 'name': '3'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': '\
+d', 'name': '3'}}, {'register': {'prefix': 'd', 'name': '1'}}, {'register': {'prefix': 'd', 'name': '30'}}]}, 'directive': None,\
+ 'comment': None, 'label': None, 'line': 'fadd\td3, d1, d30', 'line_number': 528, 'flags': [], 'port_pressure': [0.5, 0.0, 0.5, \
+0.0, 0.0, 0.0, 0.0, 0.0], 'throughput': 0.5, 'latency': 6.0, 'latency_wo_load': 6.0, 'latency_cp': 6.0, 'latency_lcd': 6.0}",
+		penwidth=4,
+		shape=rectangle,
+		style="bold,filled"];
+	"527: fadd" -> "528: fadd"	 [label=6.0,
+		latency=6.0,
+		penwidth=3,
+		style=bold];
+	"528: fadd" -> "529: fadd"	 [color=3,
+		label=6.0,
+		latency=6.0,
+		penwidth=3,
+		style=bold];
+	"530: fmul"	 [fillcolor=3,
+		instruction_form="{'instruction': 'fmul', 'operands': {'source': [{'register': {'prefix': 'd', 'name': '4'}}, {'register': {'prefix': 'd', 'name':\
+ '9'}}], 'destination': [{'register': {'prefix': 'd', 'name': '5'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': 'd\
+', 'name': '5'}}, {'register': {'prefix': 'd', 'name': '4'}}, {'register': {'prefix': 'd', 'name': '9'}}]}, 'directive': None, '\
+comment': None, 'label': None, 'line': 'fmul\td5, d4, d9', 'line_number': 530, 'flags': [], 'port_pressure': [0.5, 0.0, 0.5, 0.0\
+, 0.0, 0.0, 0.0, 0.0], 'throughput': 0.5, 'latency': 6.0, 'latency_wo_load': 6.0, 'latency_cp': 6.0, 'latency_lcd': 6.0}",
+		penwidth=4,
+		shape=rectangle,
+		style="bold,filled"];
+	"529: fadd" -> "530: fmul"	 [color=3,
+		label=6.0,
+		latency=6.0,
+		penwidth=3,
+		style=bold];
+	"530: fmul" -> "531: str"	 [label=6.0,
+		latency=6.0,
+		penwidth=3,
+		style=bold];
+	"537: fadd"	 [fillcolor=3,
+		instruction_form="{'instruction': 'fadd', 'operands': {'source': [{'register': {'prefix': 'd', 'name': '17'}}, {'register': {'prefix': 'd', 'name'\
+: '5'}}], 'destination': [{'register': {'prefix': 'd', 'name': '18'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': \
+'d', 'name': '18'}}, {'register': {'prefix': 'd', 'name': '17'}}, {'register': {'prefix': 'd', 'name': '5'}}]}, 'directive': None\
+, 'comment': None, 'label': None, 'line': 'fadd\td18, d17, d5', 'line_number': 537, 'flags': [], 'port_pressure': [0.5, 0.0, 0.5\
+, 0.0, 0.0, 0.0, 0.0, 0.0], 'throughput': 0.5, 'latency': 6.0, 'latency_wo_load': 6.0, 'latency_cp': 6.0, 'latency_lcd': 6.0}",
+		penwidth=4,
+		shape=rectangle,
+		style="bold,filled"];
+	"530: fmul" -> "537: fadd"	 [color=3,
+		label=6.0,
+		latency=6.0];
+	"532: ldr"	 [instruction_form="{'instruction': 'ldr', 'operands': {'source': [{'memory': {'offset': None, 'base': {'prefix': 'x', 'name': '14'}, 'index': {'prefix\
+': 'x', 'name': '18', 'shift_op': 'lsl', 'shift': {'value': '3'}}, 'scale': 8}}], 'destination': [{'register': {'prefix': 'd', '\
+name': '6'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': 'd', 'name': '6'}}, {'memory': {'offset': None, 'base': {\
+'prefix': 'x', 'name': '14'}, 'index': {'prefix': 'x', 'name': '18', 'shift_op': 'lsl', 'shift': {'value': '3'}}, 'scale': 8}}]}\
+, 'directive': None, 'comment': None, 'label': None, 'line': 'ldr\td6, [x14, x18, lsl 3]', 'line_number': 532, 'flags': ['performs\
+_load', 'is_load_instruction'], 'port_pressure': [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.0], 'throughput': 0.5, 'latency': 4.0, 'latency\
+_wo_load': 4.0, 'latency_cp': 4.0, 'latency_lcd': 4.0, 'mem_dep': {'instruction': 'str', 'operands': {'source': [{'register': {'\
+prefix': 'd', 'name': '5'}}], 'destination': [{'memory': {'offset': None, 'base': {'prefix': 'x', 'name': '14'}, 'index': None, \
+'scale': 1, 'post_indexed': {'value': '8'}}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': 'd', 'name': '5'}}, {'memory\
+': {'offset': None, 'base': {'prefix': 'x', 'name': '14'}, 'index': None, 'scale': 1, 'post_indexed': {'value': '8'}}}]}, 'directive\
+': None, 'comment': None, 'label': None, 'line': 'str\td5, [x14], 8', 'line_number': 531, 'flags': ['performs_store'], 'port_pressure\
+': [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 1.0], 'throughput': 1.0, 'latency': 4.0, 'latency_wo_load': 4.0, 'latency_cp': 4.0, 'latency\
+_lcd': 4.0}}",
+		penwidth=4,
+		shape=rectangle,
+		style=bold];
+	"531: str" -> "532: ldr"	 [label=4.0,
+		latency=4.0,
+		penwidth=3,
+		style=bold];
+	"533: ldr"	 [instruction_form="{'instruction': 'ldr', 'operands': {'source': [{'memory': {'offset': {'value': '8'}, 'base': {'prefix': 'x', 'name': '14'}, 'index\
+': None, 'scale': 1}}], 'destination': [{'register': {'prefix': 'd', 'name': '16'}}], 'src_dst': [], 'operand_list': [{'register\
+': {'prefix': 'd', 'name': '16'}}, {'memory': {'offset': {'value': '8'}, 'base': {'prefix': 'x', 'name': '14'}, 'index': None, '\
+scale': 1}}]}, 'directive': None, 'comment': None, 'label': None, 'line': 'ldr\td16, [x14, 8]', 'line_number': 533, 'flags': ['performs\
+_load', 'is_load_instruction'], 'port_pressure': [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.0], 'throughput': 0.5, 'latency': 4.0, 'latency\
+_wo_load': 4.0, 'latency_cp': 0, 'latency_lcd': 4.0, 'mem_dep': {'instruction': 'str', 'operands': {'source': [{'register': {'prefix\
+': 'd', 'name': '5'}}], 'destination': [{'memory': {'offset': None, 'base': {'prefix': 'x', 'name': '14'}, 'index': None, 'scale\
+': 1, 'post_indexed': {'value': '8'}}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': 'd', 'name': '5'}}, {'memory': \
+{'offset': None, 'base': {'prefix': 'x', 'name': '14'}, 'index': None, 'scale': 1, 'post_indexed': {'value': '8'}}}]}, 'directive\
+': None, 'comment': None, 'label': None, 'line': 'str\td5, [x14], 8', 'line_number': 531, 'flags': ['performs_store'], 'port_pressure\
+': [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 1.0], 'throughput': 1.0, 'latency': 4.0, 'latency_wo_load': 4.0, 'latency_cp': 4.0, 'latency\
+_lcd': 4.0}}",
+		shape=rectangle];
+	"531: str" -> "533: ldr"	 [label=4.0,
+		latency=4.0];
+	"534: add"	 [instruction_form="{'instruction': 'add', 'operands': {'source': [{'register': {'prefix': 'x', 'name': '14'}}, {'immediate': {'value': '8'}}], 'destination\
+': [{'register': {'prefix': 'x', 'name': '13'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': 'x', 'name': '13'}}, {\
+'register': {'prefix': 'x', 'name': '14'}}, {'immediate': {'value': '8'}}]}, 'directive': None, 'comment': None, 'label': None, \
+'line': 'add\tx13, x14, 8', 'line_number': 534, 'flags': [], 'port_pressure': [0.33333333, 0.0, 0.33333333, 0.0, 0.33333333, 0.0\
+, 0.0, 0.0], 'throughput': 0.33333333, 'latency': 1.0, 'latency_wo_load': 1.0, 'latency_cp': 0, 'latency_lcd': 1.0, 'mem_dep': {\
+'instruction': 'str', 'operands': {'source': [{'register': {'prefix': 'd', 'name': '5'}}], 'destination': [{'memory': {'offset':\
+ None, 'base': {'prefix': 'x', 'name': '14'}, 'index': None, 'scale': 1, 'post_indexed': {'value': '8'}}}], 'src_dst': [], 'operand\
+_list': [{'register': {'prefix': 'd', 'name': '5'}}, {'memory': {'offset': None, 'base': {'prefix': 'x', 'name': '14'}, 'index':\
+ None, 'scale': 1, 'post_indexed': {'value': '8'}}}]}, 'directive': None, 'comment': None, 'label': None, 'line': 'str\td5, [x14\
+], 8', 'line_number': 531, 'flags': ['performs_store'], 'port_pressure': [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 1.0], 'throughput':\
+ 1.0, 'latency': 4.0, 'latency_wo_load': 4.0, 'latency_cp': 4.0, 'latency_lcd': 4.0}}",
+		shape=rectangle];
+	"531: str" -> "534: add"	 [label=4.0,
+		latency=4.0];
+	"535: ldr"	 [instruction_form="{'instruction': 'ldr', 'operands': {'source': [{'memory': {'offset': None, 'base': {'prefix': 'x', 'name': '14'}, 'index': {'prefix\
+': 'x', 'name': '30', 'shift_op': 'lsl', 'shift': {'value': '3'}}, 'scale': 8}}], 'destination': [{'register': {'prefix': 'd', '\
+name': '7'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': 'd', 'name': '7'}}, {'memory': {'offset': None, 'base': {\
+'prefix': 'x', 'name': '14'}, 'index': {'prefix': 'x', 'name': '30', 'shift_op': 'lsl', 'shift': {'value': '3'}}, 'scale': 8}}]}\
+, 'directive': None, 'comment': None, 'label': None, 'line': 'ldr\td7, [x14, x30, lsl 3]', 'line_number': 535, 'flags': ['performs\
+_load', 'is_load_instruction'], 'port_pressure': [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.0], 'throughput': 0.5, 'latency': 4.0, 'latency\
+_wo_load': 4.0, 'latency_cp': 0, 'latency_lcd': 4.0, 'mem_dep': {'instruction': 'str', 'operands': {'source': [{'register': {'prefix\
+': 'd', 'name': '5'}}], 'destination': [{'memory': {'offset': None, 'base': {'prefix': 'x', 'name': '14'}, 'index': None, 'scale\
+': 1, 'post_indexed': {'value': '8'}}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': 'd', 'name': '5'}}, {'memory': \
+{'offset': None, 'base': {'prefix': 'x', 'name': '14'}, 'index': None, 'scale': 1, 'post_indexed': {'value': '8'}}}]}, 'directive\
+': None, 'comment': None, 'label': None, 'line': 'str\td5, [x14], 8', 'line_number': 531, 'flags': ['performs_store'], 'port_pressure\
+': [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 1.0], 'throughput': 1.0, 'latency': 4.0, 'latency_wo_load': 4.0, 'latency_cp': 4.0, 'latency\
+_lcd': 4.0}}",
+		shape=rectangle];
+	"531: str" -> "535: ldr"	 [label=4.0,
+		latency=4.0];
+	"542: ldr"	 [instruction_form="{'instruction': 'ldr', 'operands': {'source': [{'memory': {'offset': {'value': '16'}, 'base': {'prefix': 'x', 'name': '14'}, 'index\
+': None, 'scale': 1}}], 'destination': [{'register': {'prefix': 'd', 'name': '23'}}], 'src_dst': [], 'operand_list': [{'register\
+': {'prefix': 'd', 'name': '23'}}, {'memory': {'offset': {'value': '16'}, 'base': {'prefix': 'x', 'name': '14'}, 'index': None, \
+'scale': 1}}]}, 'directive': None, 'comment': None, 'label': None, 'line': 'ldr\td23, [x14, 16]', 'line_number': 542, 'flags': [\
+'performs_load', 'is_load_instruction'], 'port_pressure': [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.0], 'throughput': 0.5, 'latency'\
+: 4.0, 'latency_wo_load': 4.0, 'latency_cp': 0, 'latency_lcd': 4.0, 'mem_dep': {'instruction': 'str', 'operands': {'source': [{'\
+register': {'prefix': 'd', 'name': '5'}}], 'destination': [{'memory': {'offset': None, 'base': {'prefix': 'x', 'name': '14'}, 'index\
+': None, 'scale': 1, 'post_indexed': {'value': '8'}}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': 'd', 'name': '5'\
+}}, {'memory': {'offset': None, 'base': {'prefix': 'x', 'name': '14'}, 'index': None, 'scale': 1, 'post_indexed': {'value': '8'}\
+}}]}, 'directive': None, 'comment': None, 'label': None, 'line': 'str\td5, [x14], 8', 'line_number': 531, 'flags': ['performs_store\
+'], 'port_pressure': [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 1.0], 'throughput': 1.0, 'latency': 4.0, 'latency_wo_load': 4.0, 'latency\
+_cp': 4.0, 'latency_lcd': 4.0}}",
+		shape=rectangle];
+	"531: str" -> "542: ldr"	 [label=4.0,
+		latency=4.0];
+	"548: str"	 [instruction_form="{'instruction': 'str', 'operands': {'source': [{'register': {'prefix': 'd', 'name': '27'}}], 'destination': [{'memory': {'offset\
+': {'value': '8'}, 'base': {'prefix': 'x', 'name': '14'}, 'index': None, 'scale': 1}}], 'src_dst': [], 'operand_list': [{'register\
+': {'prefix': 'd', 'name': '27'}}, {'memory': {'offset': {'value': '8'}, 'base': {'prefix': 'x', 'name': '14'}, 'index': None, '\
+scale': 1}}]}, 'directive': None, 'comment': None, 'label': None, 'line': 'str\td27, [x14, 8]', 'line_number': 548, 'flags': ['performs\
+_store'], 'port_pressure': [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 1.0], 'throughput': 1.0, 'latency': 4.0, 'latency_wo_load': 4.0, \
+'latency_cp': 0, 'latency_lcd': 0, 'mem_dep': {'instruction': 'str', 'operands': {'source': [{'register': {'prefix': 'd', 'name'\
+: '5'}}], 'destination': [{'memory': {'offset': None, 'base': {'prefix': 'x', 'name': '14'}, 'index': None, 'scale': 1, 'post_indexed\
+': {'value': '8'}}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': 'd', 'name': '5'}}, {'memory': {'offset': None, 'base\
+': {'prefix': 'x', 'name': '14'}, 'index': None, 'scale': 1, 'post_indexed': {'value': '8'}}}]}, 'directive': None, 'comment': None\
+, 'label': None, 'line': 'str\td5, [x14], 8', 'line_number': 531, 'flags': ['performs_store'], 'port_pressure': [0.0, 0.0, 0.0, \
+0.0, 0.0, 0.5, 0.5, 1.0], 'throughput': 1.0, 'latency': 4.0, 'latency_wo_load': 4.0, 'latency_cp': 4.0, 'latency_lcd': 4.0}}",
+		shape=rectangle];
+	"531: str" -> "548: str"	 [label=4.0,
+		latency=4.0];
+	"536: fadd"	 [instruction_form="{'instruction': 'fadd', 'operands': {'source': [{'register': {'prefix': 'd', 'name': '6'}}, {'register': {'prefix': 'd', 'name':\
+ '16'}}], 'destination': [{'register': {'prefix': 'd', 'name': '17'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': \
+'d', 'name': '17'}}, {'register': {'prefix': 'd', 'name': '6'}}, {'register': {'prefix': 'd', 'name': '16'}}]}, 'directive': None\
+, 'comment': None, 'label': None, 'line': 'fadd\td17, d6, d16', 'line_number': 536, 'flags': [], 'port_pressure': [0.5, 0.0, 0.5\
+, 0.0, 0.0, 0.0, 0.0, 0.0], 'throughput': 0.5, 'latency': 6.0, 'latency_wo_load': 6.0, 'latency_cp': 6.0, 'latency_lcd': 6.0}",
+		penwidth=4,
+		shape=rectangle,
+		style=bold];
+	"532: ldr" -> "536: fadd"	 [label=4.0,
+		latency=4.0,
+		penwidth=3,
+		style=bold];
+	"533: ldr" -> "536: fadd"	 [label=4.0,
+		latency=4.0];
+	"541: ldr"	 [instruction_form="{'instruction': 'ldr', 'operands': {'source': [{'memory': {'offset': None, 'base': {'prefix': 'x', 'name': '13'}, 'index': {'prefix\
+': 'x', 'name': '18', 'shift_op': 'lsl', 'shift': {'value': '3'}}, 'scale': 8}}], 'destination': [{'register': {'prefix': 'd', '\
+name': '21'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': 'd', 'name': '21'}}, {'memory': {'offset': None, 'base':\
+ {'prefix': 'x', 'name': '13'}, 'index': {'prefix': 'x', 'name': '18', 'shift_op': 'lsl', 'shift': {'value': '3'}}, 'scale': 8}}\
+]}, 'directive': None, 'comment': None, 'label': None, 'line': 'ldr\td21, [x13, x18, lsl 3]', 'line_number': 541, 'flags': ['performs\
+_load', 'is_load_instruction'], 'port_pressure': [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.0], 'throughput': 0.5, 'latency': 4.0, 'latency\
+_wo_load': 4.0, 'latency_cp': 0, 'latency_lcd': 4.0}",
+		shape=rectangle];
+	"534: add" -> "541: ldr"	 [label=1.0,
+		latency=1.0];
+	"543: ldr"	 [instruction_form="{'instruction': 'ldr', 'operands': {'source': [{'memory': {'offset': None, 'base': {'prefix': 'x', 'name': '13'}, 'index': {'prefix\
+': 'x', 'name': '30', 'shift_op': 'lsl', 'shift': {'value': '3'}}, 'scale': 8}}], 'destination': [{'register': {'prefix': 'd', '\
+name': '22'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': 'd', 'name': '22'}}, {'memory': {'offset': None, 'base':\
+ {'prefix': 'x', 'name': '13'}, 'index': {'prefix': 'x', 'name': '30', 'shift_op': 'lsl', 'shift': {'value': '3'}}, 'scale': 8}}\
+]}, 'directive': None, 'comment': None, 'label': None, 'line': 'ldr\td22, [x13, x30, lsl 3]', 'line_number': 543, 'flags': ['performs\
+_load', 'is_load_instruction'], 'port_pressure': [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.0], 'throughput': 0.5, 'latency': 4.0, 'latency\
+_wo_load': 4.0, 'latency_cp': 0, 'latency_lcd': 4.0}",
+		shape=rectangle];
+	"534: add" -> "543: ldr"	 [label=1.0,
+		latency=1.0];
+	"538: fadd"	 [fillcolor=3,
+		instruction_form="{'instruction': 'fadd', 'operands': {'source': [{'register': {'prefix': 'd', 'name': '18'}}, {'register': {'prefix': 'd', 'name'\
+: '7'}}], 'destination': [{'register': {'prefix': 'd', 'name': '19'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': \
+'d', 'name': '19'}}, {'register': {'prefix': 'd', 'name': '18'}}, {'register': {'prefix': 'd', 'name': '7'}}]}, 'directive': None\
+, 'comment': None, 'label': None, 'line': 'fadd\td19, d18, d7', 'line_number': 538, 'flags': [], 'port_pressure': [0.5, 0.0, 0.5\
+, 0.0, 0.0, 0.0, 0.0, 0.0], 'throughput': 0.5, 'latency': 6.0, 'latency_wo_load': 6.0, 'latency_cp': 6.0, 'latency_lcd': 6.0}",
+		penwidth=4,
+		shape=rectangle,
+		style="bold,filled"];
+	"535: ldr" -> "538: fadd"	 [label=4.0,
+		latency=4.0];
+	"536: fadd" -> "537: fadd"	 [label=6.0,
+		latency=6.0,
+		penwidth=3,
+		style=bold];
+	"537: fadd" -> "538: fadd"	 [color=3,
+		label=6.0,
+		latency=6.0,
+		penwidth=3,
+		style=bold];
+	"539: fmul"	 [fillcolor=3,
+		instruction_form="{'instruction': 'fmul', 'operands': {'source': [{'register': {'prefix': 'd', 'name': '19'}}, {'register': {'prefix': 'd', 'name'\
+: '9'}}], 'destination': [{'register': {'prefix': 'd', 'name': '20'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': \
+'d', 'name': '20'}}, {'register': {'prefix': 'd', 'name': '19'}}, {'register': {'prefix': 'd', 'name': '9'}}]}, 'directive': None\
+, 'comment': None, 'label': None, 'line': 'fmul\td20, d19, d9', 'line_number': 539, 'flags': [], 'port_pressure': [0.5, 0.0, 0.5\
+, 0.0, 0.0, 0.0, 0.0, 0.0], 'throughput': 0.5, 'latency': 6.0, 'latency_wo_load': 6.0, 'latency_cp': 6.0, 'latency_lcd': 6.0}",
+		penwidth=4,
+		shape=rectangle,
+		style="bold,filled"];
+	"538: fadd" -> "539: fmul"	 [color=3,
+		label=6.0,
+		latency=6.0,
+		penwidth=3,
+		style=bold];
+	"539: fmul" -> "540: str"	 [label=6.0,
+		latency=6.0];
+	"545: fadd"	 [fillcolor=3,
+		instruction_form="{'instruction': 'fadd', 'operands': {'source': [{'register': {'prefix': 'd', 'name': '24'}}, {'register': {'prefix': 'd', 'name'\
+: '20'}}], 'destination': [{'register': {'prefix': 'd', 'name': '25'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix':\
+ 'd', 'name': '25'}}, {'register': {'prefix': 'd', 'name': '24'}}, {'register': {'prefix': 'd', 'name': '20'}}]}, 'directive': None\
+, 'comment': None, 'label': None, 'line': 'fadd\td25, d24, d20', 'line_number': 545, 'flags': [], 'port_pressure': [0.5, 0.0, 0.5\
+, 0.0, 0.0, 0.0, 0.0, 0.0], 'throughput': 0.5, 'latency': 6.0, 'latency_wo_load': 6.0, 'latency_cp': 6.0, 'latency_lcd': 6.0}",
+		penwidth=4,
+		shape=rectangle,
+		style="bold,filled"];
+	"539: fmul" -> "545: fadd"	 [color=3,
+		label=6.0,
+		latency=6.0,
+		penwidth=3,
+		style=bold];
+	"544: fadd"	 [instruction_form="{'instruction': 'fadd', 'operands': {'source': [{'register': {'prefix': 'd', 'name': '21'}}, {'register': {'prefix': 'd', 'name'\
+: '23'}}], 'destination': [{'register': {'prefix': 'd', 'name': '24'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix':\
+ 'd', 'name': '24'}}, {'register': {'prefix': 'd', 'name': '21'}}, {'register': {'prefix': 'd', 'name': '23'}}]}, 'directive': None\
+, 'comment': None, 'label': None, 'line': 'fadd\td24, d21, d23', 'line_number': 544, 'flags': [], 'port_pressure': [0.5, 0.0, 0.5\
+, 0.0, 0.0, 0.0, 0.0, 0.0], 'throughput': 0.5, 'latency': 6.0, 'latency_wo_load': 6.0, 'latency_cp': 0, 'latency_lcd': 6.0}",
+		shape=rectangle];
+	"541: ldr" -> "544: fadd"	 [label=4.0,
+		latency=4.0];
+	"542: ldr" -> "544: fadd"	 [label=4.0,
+		latency=4.0];
+	"546: fadd"	 [fillcolor=3,
+		instruction_form="{'instruction': 'fadd', 'operands': {'source': [{'register': {'prefix': 'd', 'name': '25'}}, {'register': {'prefix': 'd', 'name'\
+: '22'}}], 'destination': [{'register': {'prefix': 'd', 'name': '26'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix':\
+ 'd', 'name': '26'}}, {'register': {'prefix': 'd', 'name': '25'}}, {'register': {'prefix': 'd', 'name': '22'}}]}, 'directive': None\
+, 'comment': None, 'label': None, 'line': 'fadd\td26, d25, d22', 'line_number': 546, 'flags': [], 'port_pressure': [0.5, 0.0, 0.5\
+, 0.0, 0.0, 0.0, 0.0, 0.0], 'throughput': 0.5, 'latency': 6.0, 'latency_wo_load': 6.0, 'latency_cp': 6.0, 'latency_lcd': 6.0}",
+		penwidth=4,
+		shape=rectangle,
+		style="bold,filled"];
+	"543: ldr" -> "546: fadd"	 [label=4.0,
+		latency=4.0];
+	"544: fadd" -> "545: fadd"	 [label=6.0,
+		latency=6.0];
+	"545: fadd" -> "546: fadd"	 [color=3,
+		label=6.0,
+		latency=6.0,
+		penwidth=3,
+		style=bold];
+	"547: fmul"	 [fillcolor=3,
+		instruction_form="{'instruction': 'fmul', 'operands': {'source': [{'register': {'prefix': 'd', 'name': '26'}}, {'register': {'prefix': 'd', 'name'\
+: '9'}}], 'destination': [{'register': {'prefix': 'd', 'name': '27'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': \
+'d', 'name': '27'}}, {'register': {'prefix': 'd', 'name': '26'}}, {'register': {'prefix': 'd', 'name': '9'}}]}, 'directive': None\
+, 'comment': None, 'label': None, 'line': 'fmul\td27, d26, d9', 'line_number': 547, 'flags': [], 'port_pressure': [0.5, 0.0, 0.5\
+, 0.0, 0.0, 0.0, 0.0, 0.0], 'throughput': 0.5, 'latency': 6.0, 'latency_wo_load': 6.0, 'latency_cp': 6.0, 'latency_lcd': 6.0}",
+		penwidth=4,
+		shape=rectangle,
+		style="bold,filled"];
+	"546: fadd" -> "547: fmul"	 [color=3,
+		label=6.0,
+		latency=6.0,
+		penwidth=3,
+		style=bold];
+	"547: fmul" -> "548: str"	 [label=6.0,
+		latency=6.0];
+	"553: fadd"	 [fillcolor=3,
+		instruction_form="{'instruction': 'fadd', 'operands': {'source': [{'register': {'prefix': 'd', 'name': '31'}}, {'register': {'prefix': 'd', 'name'\
+: '27'}}], 'destination': [{'register': {'prefix': 'd', 'name': '2'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': \
+'d', 'name': '2'}}, {'register': {'prefix': 'd', 'name': '31'}}, {'register': {'prefix': 'd', 'name': '27'}}]}, 'directive': None\
+, 'comment': None, 'label': None, 'line': 'fadd\td2, d31, d27', 'line_number': 553, 'flags': [], 'port_pressure': [0.5, 0.0, 0.5\
+, 0.0, 0.0, 0.0, 0.0, 0.0], 'throughput': 0.5, 'latency': 6.0, 'latency_wo_load': 6.0, 'latency_cp': 6.0, 'latency_lcd': 6.0}",
+		penwidth=4,
+		shape=rectangle,
+		style="bold,filled"];
+	"547: fmul" -> "553: fadd"	 [color=3,
+		label=6.0,
+		latency=6.0,
+		penwidth=3,
+		style=bold];
+	"552: fadd"	 [instruction_form="{'instruction': 'fadd', 'operands': {'source': [{'register': {'prefix': 'd', 'name': '28'}}, {'register': {'prefix': 'd', 'name'\
+: '30'}}], 'destination': [{'register': {'prefix': 'd', 'name': '31'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix':\
+ 'd', 'name': '31'}}, {'register': {'prefix': 'd', 'name': '28'}}, {'register': {'prefix': 'd', 'name': '30'}}]}, 'directive': None\
+, 'comment': None, 'label': None, 'line': 'fadd\td31, d28, d30', 'line_number': 552, 'flags': [], 'port_pressure': [0.5, 0.0, 0.5\
+, 0.0, 0.0, 0.0, 0.0, 0.0], 'throughput': 0.5, 'latency': 6.0, 'latency_wo_load': 6.0, 'latency_cp': 0, 'latency_lcd': 0}",
+		shape=rectangle];
+	"549: ldr" -> "552: fadd"	 [label=4.0,
+		latency=4.0];
+	"550: ldr" -> "552: fadd"	 [label=4.0,
+		latency=4.0];
+	"554: fadd"	 [fillcolor=3,
+		instruction_form="{'instruction': 'fadd', 'operands': {'source': [{'register': {'prefix': 'd', 'name': '2'}}, {'register': {'prefix': 'd', 'name':\
+ '29'}}], 'destination': [{'register': {'prefix': 'd', 'name': '0'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': '\
+d', 'name': '0'}}, {'register': {'prefix': 'd', 'name': '2'}}, {'register': {'prefix': 'd', 'name': '29'}}]}, 'directive': None,\
+ 'comment': None, 'label': None, 'line': 'fadd\td0, d2, d29', 'line_number': 554, 'flags': [], 'port_pressure': [0.5, 0.0, 0.5, \
+0.0, 0.0, 0.0, 0.0, 0.0], 'throughput': 0.5, 'latency': 6.0, 'latency_wo_load': 6.0, 'latency_cp': 6.0, 'latency_lcd': 6.0}",
+		penwidth=4,
+		shape=rectangle,
+		style="bold,filled"];
+	"551: ldr" -> "554: fadd"	 [label=4.0,
+		latency=4.0];
+	"552: fadd" -> "553: fadd"	 [label=6.0,
+		latency=6.0];
+	"553: fadd" -> "554: fadd"	 [color=3,
+		label=6.0,
+		latency=6.0,
+		penwidth=3,
+		style=bold];
+	"555: fmul"	 [fillcolor=3,
+		instruction_form="{'instruction': 'fmul', 'operands': {'source': [{'register': {'prefix': 'd', 'name': '0'}}, {'register': {'prefix': 'd', 'name':\
+ '9'}}], 'destination': [{'register': {'prefix': 'd', 'name': '30'}}], 'src_dst': [], 'operand_list': [{'register': {'prefix': '\
+d', 'name': '30'}}, {'register': {'prefix': 'd', 'name': '0'}}, {'register': {'prefix': 'd', 'name': '9'}}]}, 'directive': None,\
+ 'comment': None, 'label': None, 'line': 'fmul\td30, d0, d9', 'line_number': 555, 'flags': [], 'port_pressure': [0.5, 0.0, 0.5, \
+0.0, 0.0, 0.0, 0.0, 0.0], 'throughput': 0.5, 'latency': 6.0, 'latency_wo_load': 6.0, 'latency_cp': 6.0, 'latency_lcd': 6.0}",
+		penwidth=4,
+		shape=rectangle,
+		style="bold,filled"];
+	"554: fadd" -> "555: fmul"	 [color=3,
+		label=6.0,
+		latency=6.0,
+		penwidth=3,
+		style=bold];
+	"555: fmul" -> "528: fadd"	 [color=3,
+		label=6.0,
+		latency=6.0];
+	"555: fmul" -> "556: str"	 [label=6.0,
+		latency=6.0,
+		penwidth=3,
+		style=bold];
+	"558: bne"	 [instruction_form="{'instruction': 'bne', 'operands': {'source': [], 'destination': [{'identifier': {'name': '.L20'}}], 'src_dst': [], 'operand_list\
+': [{'identifier': {'name': '.L20'}}]}, 'directive': None, 'comment': None, 'label': None, 'line': 'bne\t.L20', 'line_number': 558\
+, 'flags': ['not_bound'], 'port_pressure': [0, 0, 0, 0, 0, 0, 0, 0], 'throughput': 0.0, 'latency': 0.0, 'latency_wo_load': 0.0, \
+'latency_cp': 0, 'latency_lcd': 0}",
+		shape=rectangle];
+}
