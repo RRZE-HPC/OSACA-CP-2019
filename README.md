@@ -27,7 +27,7 @@ Check out https://github.com/RRZE-HPC/OSACA
 We ran on an AMD EPYC 7451 (Zen architecture) at 2.3 GHz (fixed, turbo disabled), an Intel Xeon Gold 6248 (Cascade Lake SP architecture) at 2.5 GHz (fixed, turbo disabled) and an ARM-based Marvell ThunderX2 9980 at 2.2 GHz (natively fixed). The results should be reproducible on any Zen and Skylake SP processors. Fixing the frequency and disabling turbo is vital for experiment reproduction.
 
 ### A.2.4 Software dependencies
-* Python >= 3.5, with the following packages installed: numpy, networkx, kerncraft, pygraphviz
+* Python >= 3.5, with the following packages installed: numpy, networkx, pyparsing, pygraphviz, kerncraft
 * likwid
 * Intel Compiler suite including ifort v19.0.2
 * GNU Fortran (ARM-build-8) 8.2.0 (from ARM HPC Compiler 19.2)
@@ -37,7 +37,7 @@ We ran on an AMD EPYC 7451 (Zen architecture) at 2.3 GHz (fixed, turbo disabled)
 On Ubuntu 18.04 install with:
 ```
 apt install python3 python3-pip likwid
-pip3 install numpy networkx kerncraft pygraphviz
+pip3 install numpy networkx pyparsing pygraphviz kerncraft
 ```
 
 To download ifort as part of the Intel Parallel Studio XE check out the [Intel Developer Zone](https://software.intel.com/en-us/fortran-compilers).  
