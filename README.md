@@ -8,7 +8,7 @@
 ## A.1 Abstract
 Useful models of loop kernel runtimes on out-of-order architectures require an analysis of the the in-core performance behavior of instructions and their dependencies.
 While an instruction throughput prediction sets a lower bound to the kernel runtime, the critical path defines an upper bound.
-Such predictions are an essential part of analytic (i.e., white-box) performance models like the Roof{}line and \ac{ecm} model. They enable  a better understanding of the performance-relevant interactions between hardware architecture and loop code.
+Such predictions are an essential part of analytic (i.e., white-box) performance models like the Roofline and Execution-Cache-Memory (ECM) model. They enable  a better understanding of the performance-relevant interactions between hardware architecture and loop code.
 
 The Open Source Architecture Code Analyzer (OSACA) is a static analysis tool for predicting the execution time of sequential loops. It previously supported only x86 (Intel and AMD) architectures and simple, optimistic full-throughput execution. We have heavily extended OSACA to support ARM instructions and critical path prediction including the detection of loop-carried dependencies, which turns it into a versatile cross-architecture modeling tool. We show runtime predictions for code on Intel Cascade Lake, AMD Zen, and Marvell Vulcan micro-architectures based on machine models from available documentation and semi-automatic benchmarking. The predictions are compared with actual measurements.
 
