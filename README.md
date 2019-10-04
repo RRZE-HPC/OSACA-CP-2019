@@ -51,7 +51,7 @@ None necessary, everything is part of the code.
 ## A.3 Installation
 Please install OSACA using pip:
 ```
-pip3 install osaca==0.3.0dev0
+pip3 install osaca==0.3.1dev0
 ```
 
 ## A.4 Experiment workflow
