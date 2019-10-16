@@ -118,6 +118,7 @@ Compare numbers to Table I.
 ### `./run_predictions.sh`
 
 We expect these numbers to exactly match those in the paper. If your numbers deviate you will mostlikly have used a different compiler. Please compare the generated assembly of your compiler (found in `gauss-seidel/*.s`) with those we have generated for the paper (found in `orig/*.s`).
+Keep in mind the line numbers may differ between the numbers used in the paper, in the reference output files in `orig/` and in your locally created OSACA output.
 
 The OSACA output of your benchmarks can be found in the `measurements` directory in the structure `osaca.[architecture].out`.
 
