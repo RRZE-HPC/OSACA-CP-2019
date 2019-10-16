@@ -6,7 +6,7 @@
 cd ./gauss-seidel/
 
 echo "Running OSACA analysis ..."
-osaca --arch vulcan --export-graph dg.tx2.dot gs.s.TX2.Ofast.s | tee osaca.TX2.out
+osaca --arch tx2 --export-graph dg.tx2.dot gs.s.TX2.Ofast.s | tee osaca.TX2.out
 osaca --arch csx --export-graph dg.csx.dot gs.s.CSX.Ofast.s | tee osaca.CSX.out
 osaca --arch zen1 --export-graph dg.zen1.dot gs.s.ZEN1.Ofast.s | tee osaca.ZEN1.out
 

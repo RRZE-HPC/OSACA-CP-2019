@@ -10,14 +10,14 @@ Useful models of loop kernel runtimes on out-of-order architectures require an a
 While an instruction throughput prediction sets a lower bound to the kernel runtime, the critical path defines an upper bound.
 Such predictions are an essential part of analytic (i.e., white-box) performance models like the Roofline and Execution-Cache-Memory (ECM) model. They enable  a better understanding of the performance-relevant interactions between hardware architecture and loop code.
 
-The Open Source Architecture Code Analyzer (OSACA) is a static analysis tool for predicting the execution time of sequential loops. It previously supported only x86 (Intel and AMD) architectures and simple, optimistic full-throughput execution. We have heavily extended OSACA to support ARM instructions and critical path prediction including the detection of loop-carried dependencies, which turns it into a versatile cross-architecture modeling tool. We show runtime predictions for code on Intel Cascade Lake, AMD Zen, and Marvell Vulcan micro-architectures based on machine models from available documentation and semi-automatic benchmarking. The predictions are compared with actual measurements.
+The Open Source Architecture Code Analyzer (OSACA) is a static analysis tool for predicting the execution time of sequential loops. It previously supported only x86 (Intel and AMD) architectures and simple, optimistic full-throughput execution. We have heavily extended OSACA to support ARM instructions and critical path prediction including the detection of loop-carried dependencies, which turns it into a versatile cross-architecture modeling tool. We show runtime predictions for code on Intel Cascade Lake, AMD Zen, and Marvell ThunderX2 micro-architectures based on machine models from available documentation and semi-automatic benchmarking. The predictions are compared with actual measurements.
 
 ## A.2 Description
 
 ### A.2.1 Check-list (artifact meta information)
 - Compilation: ifort, gfortran
 - Binary: x86,  ARM aarch64
-- Hardware: Intel Cascade Lake, AMD Zen1, ARM Vulcan (ThunderX2)
+- Hardware: Intel Cascade Lake, AMD Zen1, Marvell ThunderX2 (formerly Cavium Vulcan)
 - Publicly available?: yes
 
 ### A.2.2 How software can be obtained (if available)
@@ -66,7 +66,7 @@ Fix frequencies and disable turbo mode on CPU (for 2.3 GHz, or which ever freque
 ```
 likwid-setFrequencies -t 0 -f 2.3
 ```
-Generate performance (must be done on AMD Zen, Intel Cascade Lake SP and Cavium Vulcan machines) results with
+Generate performance (must be done on AMD Zen, Intel Cascade Lake SP and Marvell ThunderX2 machines) results with
 ```
 ./run_measurements.sh [ARCH]
 ```
